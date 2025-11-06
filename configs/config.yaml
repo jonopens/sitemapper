@@ -1,0 +1,15 @@
+# Sitemapper Configuration
+
+# Database configuration
+database_type: postgres  # Options: postgres, mysql, sqlite, memory
+database_url: postgresql://localhost:5432/sitemapper?sslmode=disable
+
+# Server configuration
+server_port: 8080
+environment: development  # Options: development, staging, production
+
+# Application settings
+max_upload_size: 104857600  # 100MB in bytes
+enable_liveness: true
+worker_count: 5
+

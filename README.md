@@ -6,11 +6,12 @@ A tool for long-running XML sitemap comparison. A tool I wish I had when I was d
 
 - Keep track of sitemap changes, either on a schedule or ad hoc
 - Allow for manual source file upload or fetch from a URL
-- 
+- Sample large sitemap indexes
 
 ## Models
 
 The domain objects that are encapsulated
+// more details here about models
 
 ## Flow
 
@@ -35,4 +36,4 @@ The domain objects that are encapsulated
   - a <url> or <sitemap> with no <loc> is an invalid entry
 - if entries, attempt to categorize by URL segment, if they exist and enqueue as batches
 - if sitemaps, attempt to categorize by sitemap URL segments, if they exist
-- 
+// more details here breaking down the process

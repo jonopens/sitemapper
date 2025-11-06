@@ -1,13 +1,14 @@
-package models // domain models
+package models
 
 import "time"
 
-// a user is a user of the system
+// User represents a user in the system
 type User struct {
-	ID string `json:"id"`
-	Email *string `json:"email"`
-	Phone *string `json:"phone"`
-	SlackID *string `json:"slack_id"`
+	ID        string    `json:"id"`
+	Email     string    `json:"email"`
+	Name      string    `json:"name"`
+	Phone     *string   `json:"phone,omitempty"`
+	SlackID   *string   `json:"slack_id,omitempty"`
 	CreatedAt time.Time `json:"created_at"`
 	UpdatedAt time.Time `json:"updated_at"`
 }
