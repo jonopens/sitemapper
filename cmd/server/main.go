@@ -34,8 +34,8 @@ func main() {
 	// Initialize services
 	sitemapService := services.NewSitemapService(db)
 	reportService := services.NewReportService(db)
-	jobService := services.NewJobService(db)
-	categoryService := services.NewCategoryService(db)
+	_ = services.NewJobService(db)         // TODO: Use when job endpoints are implemented
+	_ = services.NewGroupingService(db)    // TODO: Use when grouping endpoints are implemented
 
 	// Initialize handlers
 	sitemapHandler := handlers.NewSitemapHandler(sitemapService)

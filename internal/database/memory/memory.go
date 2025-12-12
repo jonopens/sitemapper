@@ -12,24 +12,24 @@ import (
 // Database implements repositories.Database with in-memory storage
 // Useful for testing and development
 type Database struct {
-	entries    map[string]*models.Entry
-	reports    map[string]*models.Report
-	users      map[string]*models.User
-	categories map[string]*models.Category
-	jobs       map[string]*models.ReportJob
-	releases   map[string]*models.Release
-	mu         sync.RWMutex
+	entries   map[string]*models.Entry
+	reports   map[string]*models.Report
+	users     map[string]*models.User
+	groupings map[string]*models.Group
+	jobs      map[string]*models.ReportJob
+	releases  map[string]*models.Release
+	mu        sync.RWMutex
 }
 
 // New creates a new in-memory database
 func New() *Database {
 	return &Database{
-		entries:    make(map[string]*models.Entry),
-		reports:    make(map[string]*models.Report),
-		users:      make(map[string]*models.User),
-		categories: make(map[string]*models.Category),
-		jobs:       make(map[string]*models.ReportJob),
-		releases:   make(map[string]*models.Release),
+		entries:   make(map[string]*models.Entry),
+		reports:   make(map[string]*models.Report),
+		users:     make(map[string]*models.User),
+		groupings: make(map[string]*models.Group),
+		jobs:      make(map[string]*models.ReportJob),
+		releases:  make(map[string]*models.Release),
 	}
 }
 
@@ -48,9 +48,9 @@ func (d *Database) Users() repositories.UserRepository {
 	return &UserRepository{db: d}
 }
 
-// Categories returns the category repository
-func (d *Database) Categories() repositories.CategoryRepository {
-	return &CategoryRepository{db: d}
+// Groupings returns the grouping repository
+func (d *Database) Groupings() repositories.GroupingRepository {
+	return &GroupingRepository{db: d}
 }
 
 // ReportJobs returns the report job repository

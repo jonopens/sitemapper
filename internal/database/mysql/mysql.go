@@ -44,9 +44,9 @@ func (d *Database) Users() repositories.UserRepository {
 	return &UserRepository{db: d.db, tx: d.tx}
 }
 
-// Categories returns the category repository
-func (d *Database) Categories() repositories.CategoryRepository {
-	return &CategoryRepository{db: d.db, tx: d.tx}
+// Groupings returns the grouping repository
+func (d *Database) Groupings() repositories.GroupingRepository {
+	return &GroupingRepository{db: d.db, tx: d.tx}
 }
 
 // ReportJobs returns the report job repository

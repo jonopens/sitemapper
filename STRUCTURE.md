@@ -15,10 +15,10 @@ sitemapper/
 │   │   └── config.go                  # Configuration loader
 │   │
 │   ├── models/                        # Domain models (database-agnostic)
-│   │   ├── category.go
+│   │   ├── grouping.go
 │   │   ├── changeset.go
 │   │   ├── entry.go
-│   │   ├── entry_categories.go
+│   │   ├── entry_groupings.go
 │   │   ├── release.go
 │   │   ├── report.go
 │   │   ├── report_job.go
@@ -35,7 +35,7 @@ sitemapper/
 │   │   │   ├── entry_repository.go
 │   │   │   ├── report_repository.go
 │   │   │   ├── user_repository.go
-│   │   │   ├── category_repository.go
+│   │   │   ├── grouping_repository.go
 │   │   │   ├── report_job_repository.go
 │   │   │   └── release_repository.go
 │   │   │
@@ -56,7 +56,7 @@ sitemapper/
 │   │   ├── sitemap_service.go
 │   │   ├── report_service.go
 │   │   ├── job_service.go
-│   │   └── category_service.go
+│   │   └── grouping_service.go
 │   │
 │   └── handlers/                      # HTTP handlers (controllers)
 │       ├── sitemap_handler.go

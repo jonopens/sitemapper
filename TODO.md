@@ -30,12 +30,12 @@ Complete the PostgreSQL repository implementations with actual SQL queries.
 - [ ] Implement Update - Update existing user
 - [ ] Implement Delete - Remove user
 
-#### Category Repository (`internal/database/postgres/category_repository.go`)
-- [ ] Implement Create - Insert category into database
-- [ ] Implement GetByID - Fetch category by ID
-- [ ] Implement List - List all categories
-- [ ] Implement Update - Update existing category
-- [ ] Implement Delete - Remove category
+#### Grouping Repository (`internal/database/postgres/grouping_repository.go`)
+- [ ] Implement Create - Insert grouping into database
+- [ ] Implement GetByID - Fetch grouping by ID
+- [ ] Implement List - List all groupings
+- [ ] Implement Update - Update existing grouping
+- [ ] Implement Delete - Remove grouping
 
 #### Report Job Repository (`internal/database/postgres/report_job_repository.go`)
 - [ ] Implement Create - Insert job into database
@@ -58,7 +58,7 @@ Complete the PostgreSQL repository implementations with actual SQL queries.
 ### Sitemap Service (`internal/services/sitemap_service.go`)
 - [ ] Implement ProcessSitemap
   - Parse sitemap using parser
-  - Categorize entries by URL segments
+  - Group entries by URL segments
   - Store entries in database
   - Handle sitemap index vs regular sitemap
 - [ ] Implement CompareSitemaps
@@ -70,7 +70,7 @@ Complete the PostgreSQL repository implementations with actual SQL queries.
 ### Report Service (`internal/services/report_service.go`)
 - [ ] Implement GenerateReport
   - Fetch sitemap entries
-  - Calculate metrics (entry count, category count, etc.)
+  - Calculate metrics (entry count, grouping count, etc.)
   - Check for invalid entries
   - Generate and store report
 
@@ -85,12 +85,12 @@ Complete the PostgreSQL repository implementations with actual SQL queries.
   - Update job status
   - Handle errors and retries
 
-### Category Service (`internal/services/category_service.go`)
-- [ ] Implement CategorizeURLs
+### Grouping Service (`internal/services/grouping_service.go`)
+- [ ] Implement GroupURLs
   - Parse URL path segments
   - Group URLs by common patterns
-  - Create/update categories
-  - Return categorization mapping
+  - Create/update groupings
+  - Return grouping mapping
 
 ---
 
@@ -166,8 +166,8 @@ Complete the PostgreSQL repository implementations with actual SQL queries.
   - users table
   - entries table
   - reports table
-  - categories table
-  - entry_categories join table
+  - groupings table
+  - entry_groupings join table
   - report_jobs table
   - releases table
   - changesets table

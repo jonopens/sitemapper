@@ -25,7 +25,7 @@ func NewSitemapService(db repositories.Database) *SitemapService {
 func (s *SitemapService) ProcessSitemap(ctx context.Context, userID string, data []byte) error {
 	// TODO: Implement sitemap processing logic
 	// 1. Parse sitemap using parser
-	// 2. Categorize entries
+	// 2. Group entries
 	// 3. Store in database
 	return nil
 }

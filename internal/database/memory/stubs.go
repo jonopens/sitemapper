@@ -112,48 +112,48 @@ func (r *UserRepository) Delete(ctx context.Context, id string) error {
 	return nil
 }
 
-type CategoryRepository struct {
+type GroupingRepository struct {
 	db *Database
 }
 
-func (r *CategoryRepository) Create(ctx context.Context, category *models.Category) error {
+func (r *GroupingRepository) Create(ctx context.Context, grouping *models.Group) error {
 	r.db.mu.Lock()
 	defer r.db.mu.Unlock()
-	r.db.categories[category.ID] = category
+	r.db.groupings[grouping.ID] = grouping
 	return nil
 }
 
-func (r *CategoryRepository) GetByID(ctx context.Context, id string) (*models.Category, error) {
+func (r *GroupingRepository) GetByID(ctx context.Context, id string) (*models.Group, error) {
 	r.db.mu.RLock()
 	defer r.db.mu.RUnlock()
-	category, exists := r.db.categories[id]
+	grouping, exists := r.db.groupings[id]
 	if !exists {
 		return nil, ErrNotFound
 	}
-	return category, nil
+	return grouping, nil
 }
 
-func (r *CategoryRepository) List(ctx context.Context) ([]*models.Category, error) {
+func (r *GroupingRepository) List(ctx context.Context) ([]*models.Group, error) {
 	r.db.mu.RLock()
 	defer r.db.mu.RUnlock()
-	var categories []*models.Category
-	for _, category := range r.db.categories {
-		categories = append(categories, category)
+	var groupings []*models.Group
+	for _, grouping := range r.db.groupings {
+		groupings = append(groupings, grouping)
 	}
-	return categories, nil
+	return groupings, nil
 }
 
-func (r *CategoryRepository) Update(ctx context.Context, category *models.Category) error {
+func (r *GroupingRepository) Update(ctx context.Context, grouping *models.Group) error {
 	r.db.mu.Lock()
 	defer r.db.mu.Unlock()
-	r.db.categories[category.ID] = category
+	r.db.groupings[grouping.ID] = grouping
 	return nil
 }
 
-func (r *CategoryRepository) Delete(ctx context.Context, id string) error {
+func (r *GroupingRepository) Delete(ctx context.Context, id string) error {
 	r.db.mu.Lock()
 	defer r.db.mu.Unlock()
-	delete(r.db.categories, id)
+	delete(r.db.groupings, id)
 	return nil
 }
 

@@ -94,28 +94,28 @@ func (r *UserRepository) Delete(ctx context.Context, id string) error {
 	return nil
 }
 
-type CategoryRepository struct {
+type GroupingRepository struct {
 	db *sql.DB
 	tx *sql.Tx
 }
 
-func (r *CategoryRepository) Create(ctx context.Context, category *models.Category) error {
+func (r *GroupingRepository) Create(ctx context.Context, grouping *models.Group) error {
 	return nil
 }
 
-func (r *CategoryRepository) GetByID(ctx context.Context, id string) (*models.Category, error) {
+func (r *GroupingRepository) GetByID(ctx context.Context, id string) (*models.Group, error) {
 	return nil, nil
 }
 
-func (r *CategoryRepository) List(ctx context.Context) ([]*models.Category, error) {
+func (r *GroupingRepository) List(ctx context.Context) ([]*models.Group, error) {
 	return nil, nil
 }
 
-func (r *CategoryRepository) Update(ctx context.Context, category *models.Category) error {
+func (r *GroupingRepository) Update(ctx context.Context, grouping *models.Group) error {
 	return nil
 }
 
-func (r *CategoryRepository) Delete(ctx context.Context, id string) error {
+func (r *GroupingRepository) Delete(ctx context.Context, id string) error {
 	return nil
 }
 

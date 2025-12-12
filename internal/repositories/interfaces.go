@@ -11,7 +11,7 @@ type Database interface {
 	Entries() EntryRepository
 	Reports() ReportRepository
 	Users() UserRepository
-	Categories() CategoryRepository
+	Groupings() GroupingRepository
 	ReportJobs() ReportJobRepository
 	Releases() ReleaseRepository
 	
@@ -51,12 +51,12 @@ type UserRepository interface {
 	Delete(ctx context.Context, id string) error
 }
 
-// CategoryRepository defines the contract for category data access
-type CategoryRepository interface {
-	Create(ctx context.Context, category *models.Category) error
-	GetByID(ctx context.Context, id string) (*models.Category, error)
-	List(ctx context.Context) ([]*models.Category, error)
-	Update(ctx context.Context, category *models.Category) error
+// GroupingRepository defines the contract for grouping data access
+type GroupingRepository interface {
+	Create(ctx context.Context, grouping *models.Group) error
+	GetByID(ctx context.Context, id string) (*models.Group, error)
+	List(ctx context.Context) ([]*models.Group, error)
+	Update(ctx context.Context, grouping *models.Group) error
 	Delete(ctx context.Context, id string) error
 }
 
