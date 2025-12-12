@@ -31,9 +31,9 @@ The domain objects that are encapsulated
 
 ## Sitemap Processing
 
-- determine if a file is a sitemap index or a simple sitemap based on <urlset> or <sitemapindex>
-  - a <url> or <sitemap> with no data is an invalid entry
-  - a <url> or <sitemap> with no <loc> is an invalid entry
+- determine if a file is a sitemap index or a simple sitemap based on `<urlset>` or `<sitemapindex>`
+  - a `<url>` or `<sitemap>` with no data is an invalid entry
+  - a `<url>` or `<sitemap>` with no `<loc>` is an invalid entry
 - if entries, attempt to categorize by URL segment, if they exist and enqueue as batches
 - if sitemaps, attempt to categorize by sitemap URL segments, if they exist
 // more details here breaking down the process
