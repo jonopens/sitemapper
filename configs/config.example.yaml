@@ -12,9 +12,13 @@ database_type: postgres
 # Memory:     (no URL needed)
 database_url: postgresql://localhost:5432/sitemapper?sslmode=disable
 
-# Server configuration
-server_port: 8080
+# Environment configuration
 environment: development  # Options: development, staging, production
+
+# CLI-specific settings
+default_user_id: default  # Default user ID for CLI operations
+output_format: table      # Default output format: json, table, text
+color_output: true        # Enable colored output in terminal
 
 # Application settings
 max_upload_size: 104857600  # Maximum sitemap file size in bytes (default: 100MB)

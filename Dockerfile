@@ -17,7 +17,7 @@ RUN go mod download
 COPY . .
 
 # Build the application
-RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o sitemapper ./cmd/server
+RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o sitemapper ./cmd/cli
 
 # Runtime stage
 FROM alpine:latest
@@ -33,9 +33,7 @@ COPY --from=builder /app/sitemapper .
 # Copy config files
 COPY --from=builder /app/configs ./configs
 
-# Expose port
-EXPOSE 8080
-
-# Run the application
-CMD ["./sitemapper"]
+# Run the application (default to help)
+ENTRYPOINT ["./sitemapper"]
+CMD ["--help"]
 

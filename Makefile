@@ -2,7 +2,7 @@
 
 # Variables
 APP_NAME=sitemapper
-MAIN_PATH=./cmd/server
+MAIN_PATH=./cmd/cli
 BUILD_DIR=./bin
 CONFIG_FILE=./configs/config.yaml
 
@@ -66,9 +66,9 @@ docker-build: ## Build Docker image
 	@echo "Building Docker image..."
 	@docker build -t $(APP_NAME):latest .
 
-docker-run: ## Run Docker container
+docker-run: ## Run Docker container (interactive)
 	@echo "Running Docker container..."
-	@docker run -p 8080:8080 --env-file .env $(APP_NAME):latest
+	@docker run -it --rm --env-file .env $(APP_NAME):latest
 
 dev: ## Run in development mode with auto-reload
 	@echo "Running in development mode..."
